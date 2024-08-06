@@ -1,0 +1,52 @@
+### Führt eine Authentifizierung beim System durch
+POST http://localhost:9002/login
+Content-Type: application/json
+
+{
+  "username": "max.muster",
+  "password": "Anmeldung1"
+}
+
+> {%
+    client.global.set('token', response.body.token)
+%}
+
+### Liefert alle ToDos
+GET http://localhost:9002/todos
+token: {{token}}
+
+### Legt ein neues ToDo an
+PUT http://localhost:9002/todo
+Content-Type: application/json
+token: {{token}}
+
+{
+  "beschreibung": "Test",
+  "Faellig": 123123,
+  "prioritaet": 1
+}
+
+
+### Liefert ein ToDo für eine ID oder 404 wenn nicht gefunden
+GET http://localhost:9002/todo/2
+token: {{token}}
+
+### Löscht ein ToDo
+DELETE http://localhost:9002/todo/9
+token: {{token}}
+
+### Aktualisiert ein ToDo
+POST http://localhost:9002/todo/1
+Content-Type: application/json
+token: {{token}}
+
+{
+  "beschreibung": "Test",
+  "faellig": 123123,
+  "prioritaet": 2,
+  "erledigt": true
+}
+
+### Liefert alle Prioritäten zurück
+GET http://localhost:9002/prios
+token: {{token}}
