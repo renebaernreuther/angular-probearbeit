@@ -1,12 +1,7 @@
-# Probearbeiter Projekte
+# Probearbeit Angular
 
-Beinhaltet Templates für Probearbeiterprojekte.
+Die Anforderungen befinden sich in der TodoAnwendung-Angular.pdf Datei.
 
-## php
+Die Backend-API kann über ./todoApi gestartet werden. Es handelt sich hierbei um das Binary einer Go-Anwendung.
 
-Beinhaltet einen einfachen apache-container, der
-
-## todo-go-api
-
-Einfache API für eine ToDo-Anwendung. Liefert ToDos, die hinter einer einfachen Authentifizierung stehen.
-Die Daten sind nicht persistent hinterlegt.
+Viel Erfolg!
